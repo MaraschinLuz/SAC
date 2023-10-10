@@ -72,7 +72,7 @@ class CidadeController extends Controller
         // Salva as alterações no autor
         $cidade->save();
         // Redireciona para a rota 'autores.index' após salvar
-        return redirect()->route('cidade.index');
+        return redirect()->route('cidades.index');
     }
     /**
      * Remove the specified resource from storage.
