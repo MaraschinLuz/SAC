@@ -49,12 +49,12 @@
     <body>
         <div class="container">
             <h1>Editar Cidade</h1>
-            <form action="{{ route('cidades.update', $cidades->id) }}" method="POST">
+            <form action="{{ route('cidades.update', $cidade->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
                     <label for="nomeCidade">Nome:</label>
-                    <input type="text" name="nomeCidade" value="{{ $cidade->nome }}">
+                    <input type="text" name="nomeCidade" value="{{ $cidade->nomeCidade }}">
                 </div>
                 <div class="form-group">
                     <label for="UF">UF:</label>
