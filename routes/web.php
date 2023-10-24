@@ -31,4 +31,5 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('cidades', CidadeController::class);
 
+
 require __DIR__.'/auth.php';
