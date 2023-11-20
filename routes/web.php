@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
+use App\Http\Controllers\MotivoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
 
 });
 Route::resource('cidades', CidadeController::class);
+Route::resource('motivo', MotivoController::class);
 
 
 require __DIR__.'/auth.php';
