@@ -44,20 +44,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Editar Motivo</title>
+        <title>Editar Cidade</title>
     </head>
     <body>
         <div class="container">
-            <h1>Editar Motivo</h1>
-            <form action="{{ route('motivo.update', $motivo->id) }}" method="POST">
+            <h1>Editar Cidade</h1>
+            <form action="{{ route('cidades.update', $cidade->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="descricao">Descrição: </label>
-                    <input type="text" name="descricao" value="{{ $motivo->descricao }}">
+                    <label for="nomeCidade">Nome:</label>
+                    <input type="text" name="nomeCidade" value="{{ $cidade->nomeCidade }}">
+                </div>
+                <div class="form-group">
+                    <label for="UF">UF:</label>
+                    <input type="text" name="UF" value="{{ $cidade->UF }}">
                 </div>
                 <button type="submit" class="btn btn-success">Salvar Alterações</button>
-                <a href="{{ route('motivo.index') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('cidades.index') }}" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </body>

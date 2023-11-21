@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Motivo;
+use App\Models\Colaborador;
 use Illuminate\Http\Request;
 
-class MotivoController extends Controller
+class ColaboradorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $motivo = Motivo::all();
-        return view('motivo.index', compact('motivo'));
+        $colaborador = Colaborador::all();
+        return view('colaborador.index', compact('colaborador'));
     }
 
     /**
@@ -20,7 +20,7 @@ class MotivoController extends Controller
      */
     public function create()
     {
-        return view('motivo.create');
+        return view('colaborador.create');
     }
 
     /**
@@ -28,12 +28,13 @@ class MotivoController extends Controller
      */
     public function store(Request $request)
     {
-        $motivo = new Motivo([
-            'descricao' => $request->input('descricao'),
+        $colaborador = new Colaborador([
+            'nomeColab' => $request->input('nomeColab'),
+            'funcao' => $request->input('funcao')
         ]);
 
-        $motivo->save();
-        return redirect()->route('motivo.index');
+        $colaborador->save();
+        return redirect()->route('colaborador.index');
     }
 
     /**
@@ -42,9 +43,9 @@ class MotivoController extends Controller
     public function show($id)
     {
         // Encontra um autor no banco de dados com o ID fornecido
-        $motivo = Motivo::findOrFail($id);
+        $colaborador = Colaborador::findOrFail($id);
         // Retorna a view 'autores.show' e passa o autor como parâmetro
-        return view('motivo.show', compact('motivo'));
+        return view('colaborador.show', compact('colaborador'));
     }
 
     /**
@@ -53,9 +54,9 @@ class MotivoController extends Controller
     public function edit($id)
     {
         // Encontra um autor no banco de dados com o ID fornecido
-        $motivo = Motivo::findOrFail($id);
+        $colaborador = Colaborador::findOrFail($id);
         // Retorna a view 'autores.edit' e passa o autor como parâmetro
-        return view('motivo.edit', compact('motivo'));
+        return view('colaborador.edit', compact('colaborador'));
     }
 
     /**
@@ -64,13 +65,14 @@ class MotivoController extends Controller
     public function update(Request $request, $id)
     {
         // Encontra um autor no banco de dados com o ID fornecido
-        $motivo = Motivo::findOrFail($id);
+        $colaborador = Colaborador::findOrFail($id);
         // Atualiza os campos do autor com os dados fornecidos no request
-        $motivo->descricao = $request->input('descricao');
+        $colaborador->nomeColab = $request->input('nomeColab');
+        $colaborador->funcao = $request->input('funcao');
         // Salva as alterações no autor
-        $motivo->save();
+        $colaborador->save();
         // Redireciona para a rota 'autores.index' após salvar
-        return redirect()->route('motivo.index');
+        return redirect()->route('colaborador.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -78,10 +80,11 @@ class MotivoController extends Controller
     public function destroy($id)
     {
         // Encontra um autor no banco de dados com o ID fornecido
-        $motivo = Motivo::findOrFail($id);
+        $colaborador = Colaborador::findOrFail($id);
         // Exclui o autor do banco de dados
-        $motivo->delete();
+        $colaborador->delete();
         // Redireciona para a rota 'autores.index' após excluir
-        return redirect()->route('motivo.index');
+        return redirect()->route('colaborador.index');
     }
 }
+

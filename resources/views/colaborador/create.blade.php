@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Novo Motivo</title>
+        <title>Novo Colaborador</title>
         <style>
             body {
                 background-color: #fff; /* Fundo branco */
@@ -46,16 +46,20 @@
     </head>
     <body>
         <div class="container">
-            <h1>Novo Motivo</h1>
-            <form action="{{ route('motivo.store') }}" method="POST">
+            <h1>Novo Colaborador</h1>
+            <form action="{{ route('colaborador.store') }}" method="POST">
                 <!-- Token CSRF para proteção contra ataques CSRF -->
                 @csrf
                 <div class="form-group">
-                    <label for="descricao">Descrição: </label>
-                    <input type="text" name="descricao" required>
+                    <label for="nomeColab">Nome: </label>
+                    <input type="text" name="nomeColab" required>
+                </div>
+                <div class="form-group">
+                    <label for="funcao">Função: </label>
+                    <input type="text" name="funcao" required>
                 </div>
                 <button type="submit" class="btn btn-success">Salvar</button>
-                <a href="{{ route('motivo.index') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('colaborador.index') }}" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </body>

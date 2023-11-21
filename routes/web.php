@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('cidades', CidadeController::class);
 Route::resource('motivo', MotivoController::class);
+Route::resource('colaborador', ColaboradorController::class);
 
 
 require __DIR__.'/auth.php';
