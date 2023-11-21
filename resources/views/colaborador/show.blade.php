@@ -1,12 +1,12 @@
 <x-app-layout>
-    <div class="cidades-details-layout">
-        <link rel="stylesheet" href="{{ asset('css/cidade/show.css') }}">
-        <h1>Detalhes do Cidade</h1>
+    <div class="colaborador-details-layout">
+        <link rel="stylesheet" href="{{ asset('css/colaborador/show.css') }}">
+        <h1>Detalhes do Colaborador</h1>
         <ul>
-            <li><strong>ID:</strong> {{ $cidade->id }}</li>
-            <li><strong>Nome:</strong> {{ $cidade->nomeCidade }}</li>
-            <li><strong>UF:</strong> {{  $cidade->UF }}</li>
+            <li><strong>ID:</strong> {{ $colaborador->id }}</li>
+            <li><strong>Nome:</strong> {{ $colaborador->nomeColab }}</li>
+            <li><strong>Função:</strong> {{  $colaborador->funcao }}</li>
         </ul>
-        <a href="{{ route('cidades.index') }}" class="btn btn-secondary">Voltar</a>
+        <a href="{{ route('colaborador.index') }}" class="btn btn-secondary">Voltar</a>
     </div>
 </x-app-layout>

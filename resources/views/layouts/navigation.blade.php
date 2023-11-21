@@ -24,6 +24,10 @@
                     <x-nav-link :href="route('motivo.index')">
                         {{ __('Motivos') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('colaborador.index')">
+                        {{ __('Colaborador') }}
+                    </x-nav-link>
                 </div>
 
             </div>
