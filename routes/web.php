@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\MotivoController;
 use App\Http\Controllers\ColaboradorController;
-
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('cidades', CidadeController::class);
 Route::resource('motivo', MotivoController::class);
 Route::resource('colaborador', ColaboradorController::class);
+Route::resource('cliente', ClienteController::class);
 
 
 require __DIR__.'/auth.php';
