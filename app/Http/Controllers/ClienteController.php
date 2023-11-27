@@ -18,7 +18,7 @@ class ClienteController extends Controller
     public function create()
     {
         $cidade = Cidade::all();
-        return view('cliente.create', compact('cidades'));
+        return view('cliente.create', compact('cidade'));
     }
 
     public function store(Request $request)
