@@ -16,6 +16,7 @@
                     <th>Data de Nascimento</th>
                     <th>Endereço</th>
                     <th>Cidade</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,11 @@
                         <td>
                             <a href="{{ route('cliente.show', $cliente->id) }}" class="btn btn-info">Ver</a>
                             <a href="{{ route('cliente.edit', $cliente->id) }}" class="btn btn-warning">Editar</a>
+                            <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

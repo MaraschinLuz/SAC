@@ -14,17 +14,24 @@
                     <th>ID</th>
                     <th>Nome da Filial</th>
                     <th>Cidade</th>
+                    <th>Ações</th>
+
                 </tr>
             </thead>
             <tbody>
-                @foreach($filial as $filial)
+                @foreach($filial as $filiais)
                     <tr>
-                        <td>{{ $filial->id }}</td>
-                        <td>{{ $filial->nomeFilial }}</td>
-                        <td>{{ $filial->cidade->nomeCidade }}</td>
+                        <td>{{ $filiais->id }}</td>
+                        <td>{{ $filiais->nomeFilial }}</td>
+                        <td>{{ $filiais->cidade->nomeCidade }}</td>
                         <td>
-                            <a href="{{ route('filial.show', $filial->id) }}" class="btn btn-info">Ver</a>
-                            <a href="{{ route('filial.edit', $filial->id) }}" class="btn btn-warning">Editar</a>
+                            <a href="{{ route('filial.show', $filiais->id) }}" class="btn btn-info">Ver</a>
+                            <a href="{{ route('filial.edit', $filiais->id) }}" class="btn btn-warning">Editar</a>
+                            <form action="{{ route('filial.destroy', $filiais->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

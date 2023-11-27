@@ -10,13 +10,12 @@ class Cliente extends Model
 
     use HasFactory;
 
-    protected $table = 'cliente';
     protected $fillable = [
         'nomeCliente', 'dtNascimento', 'endereçoCliente', 'idCidade'
     ];
 
     public function cidade() {
-        return $this->belongsTo(Cidade::class);
+        return $this->belongsTo(Cidade::class, 'idCidade');
     }
 
 }

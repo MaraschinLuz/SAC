@@ -17,6 +17,6 @@ class Filial extends Model
     ];
 
     public function cidade() {
-        return $this->belongsTo(Cidade::class);
+        return $this->belongsTo(Cidade::class, 'idCidade');
     }
 }
