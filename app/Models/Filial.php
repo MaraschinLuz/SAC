@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Filial extends Model
 {
 
     use HasFactory;
 
-    protected $table = 'cliente';
+
+    protected $table = 'filial';
     protected $fillable = [
-        'nomeCliente', 'dtNascimento', 'endereçoCliente', 'idCidade'
+        'nomeFilial', 'idCidade'
     ];
 
     public function cidade() {
         return $this->belongsTo(Cidade::class);
     }
-
 }

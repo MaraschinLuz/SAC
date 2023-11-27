@@ -6,6 +6,7 @@ use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\MotivoController;
 use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FilialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::resource('cidades', CidadeController::class);
 Route::resource('motivo', MotivoController::class);
 Route::resource('colaborador', ColaboradorController::class);
 Route::resource('cliente', ClienteController::class);
+Route::resource('filial', FilialController::class);
 
 
 require __DIR__.'/auth.php';

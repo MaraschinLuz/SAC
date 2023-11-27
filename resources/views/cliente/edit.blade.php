@@ -28,7 +28,7 @@
                 <label for="idCidade">Cidade</label>
                 <select class="form-control" name="idCidade" required>
                     <option value="">Selecione uma cidade</option>
-                    @foreach($cidades as $cidade)
+                    @foreach($cidade as $cidade)
                         <option value="{{ $cidade->id }}" {{ $cidade->id == $clientes->idCidade ? 'selected' : '' }}>{{ $cidade->nomeCidade }}</option>
                     @endforeach
                 </select>

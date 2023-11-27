@@ -26,7 +26,13 @@
                     </x-nav-link>
 
                     <x-nav-link :href="route('colaborador.index')">
-                        {{ __('Colaborador') }}
+                        {{ __('Colaboradores') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('cliente.index')">
+                        {{ __('Clientes') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('filial.index')">
+                        {{ __('Filiais') }}
                     </x-nav-link>
                 </div>
 

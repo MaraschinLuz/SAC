@@ -34,6 +34,6 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $cliente->links() }}
+        {{ $clientes->links() }}
     </div>
 </x-app-layout>

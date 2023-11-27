@@ -49,7 +49,7 @@ class ClienteController extends Controller
 
         $cidade = Cidade::all();
 
-        return view('cliente.edit', compact('cliente', 'cidade'));
+        return view('cliente.edit', compact('clientes', 'cidade'));
     }
 
 
