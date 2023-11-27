@@ -27,6 +27,23 @@
                 </header>
             @endif
 
+            @if (session('success'))
+                <div class="bg-green-100 border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Sucesso!</strong>
+                    <span class="block sm:inline">{{ session('success')}}</span>
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div role="alert">
+                    @foreach ($errors->all() as $error)
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-2">
+                            <strong class="font-bold">Erro!</strong>
+                            <span class="block sm:inline">{{ $error }}</span>
+                        </div>
+                    @endforeach
+                </div>
+            @endif    
             <!-- Page Content -->
             <main>
                 {{ $slot }}
