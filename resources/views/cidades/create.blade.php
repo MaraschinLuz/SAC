@@ -59,7 +59,7 @@
                     <input type="text" name="UF" required>
                 </div>
                 <button type="submit" class="btn btn-success">Salvar</button>
-                <a href="{{ route('cidade.index') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('cidades.index') }}" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </body>
